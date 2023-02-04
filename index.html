@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aesthetics Calculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Aesthetics Calculator</title>
+</head>
+
+<body>
+    <br><img src="images/moon.png" id="lightmodedarkmodeicon">
+    <br><h1>ϕ Aesthetics Calculator ϕ</h1>
+    <br><p>This is just a guideline for proportionality and what may be deemed as aesthetic according to my personal research and is obviously not an indicator of health and overall fitness.</p><br>
+
+    <table>
+        <colgroup>
+            <col class="properties"/>
+            <col class="inputs"/>
+            <col class="units"/>
+            <col class="outputs"/>
+            <col class="units"/>
+            <col class="differences"/>
+            <col class="units"/>
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th colspan="1"><h2>Properties</h2></th>
+                <th colspan="2"><h2>Inputs</h2></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Height:</td>
+                <td><input type="text" class="userInput" id="heightInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)" autofocus></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Wrist:</td>
+                <td><input type="text" class="userInput" id="wristInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Knee:</td>
+                <td><input type="text" class="userInput" id="kneeInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+            </tr>
+        </tbody>
+
+        <caption style="caption-side:bottom">
+            (Measurements to be taken flexed but not pumped.)
+        </caption>
+    </table>
+
+    <br>
+
+    <hr class="rounded">
+
+    <br>
+
+    <table>
+        <colgroup>
+            <col class="properties"/>
+            <col class="inputs"/>
+            <col class="units"/>
+            <col class="outputs"/>
+            <col class="units"/>
+            <col class="differences"/>
+            <col class="units"/>
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th colspan="1"><h2>Properties</h2></th>
+                <th colspan="2"><h2>Inputs</h2></th>
+                <th colspan="2"><h2>Outputs</h2></th>
+                <th colspan="2"><h2>Differences</h2></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Shoulders:</td>
+                <td><input type="text" class="userInput" id="shouldersInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="shouldersOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="shouldersDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Chest:</td>
+                <td><input type="text" class="userInput" id="chestInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="chestOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="chestDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Waist:</td>
+                <td><input type="text" class="userInput" id="waistInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="waistOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="waistDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Left Thigh:</td>
+                <td><input type="text" class="userInput" id="leftThighInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="leftThighOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="leftThighDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Right Thigh:</td>
+                <td><input type="text" class="userInput" id="rightThighInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="rightThighOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="rightThighDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Left Calf:</td>
+                <td><input type="text" class="userInput" id="leftCalfInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="leftCalfOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="leftCalfDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Right Calf:</td>
+                <td><input type="text" class="userInput" id="rightCalfInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="rightCalfOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="rightCalfDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Left Bicep:</td>
+                <td><input type="text" class="userInput" id="leftBicepInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="leftBicepOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="leftBicepDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Right Bicep:</td>
+                <td><input type="text" class="userInput" id="rightBicepInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="rightBicepOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="rightBicepDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Left Forearm:</td>
+                <td><input type="text" class="userInput" id="leftForearmInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="leftForearmOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="leftForearmDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+            <tr>
+                <td>Right Forearm:</td>
+                <td><input type="text" class="userInput" id="rightForearmInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>cm</td>
+                <td><input type="number" id="rightForearmOutput" readonly disabled></td>
+                <td>cm</td>
+                <td><input type="number" id="rightForearmDifference" readonly disabled></td>
+                <td>cm</td>
+            </tr>
+        </tbody>
+
+        <caption style="caption-side:bottom">
+            (Measurements to be taken flexed but not pumped.)
+        </caption>
+    </table>
+    
+    <br>
+
+    <hr class="rounded">
+
+    <br>
+
+    <p>Not happy with the expected waist output? Use the slider below to adjust for bone structure.</p>
+
+    <br>
+
+    <div class="slidecontainer"><input type="range" min="35" max="45" value="40" class="slider" id="waistSlider" oninput="onBlur(this)"></div>
+
+    <br>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

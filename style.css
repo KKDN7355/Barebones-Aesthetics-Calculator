@@ -1,0 +1,164 @@
+/* Light Mode */
+:root {
+    --backgroundColor:          #ffffff;
+    --color:                    #000000;
+
+    --thBackgroundColor:        #9394a5;
+    --trOddBackgroundColor:     #d2d3db;
+    --trEvenBackgroundColor:    #e4e5f1;
+}
+
+/* Dark Mode */
+.dark-theme {
+    --backgroundColor:          #000000;
+    --color:                    #BB86FC;
+
+    --thBackgroundColor:        #000000;
+    --trOddBackgroundColor:     #242526;
+    --trEvenBackgroundColor:    #3a3b3c;
+}
+
+* {
+    margin: 0 auto;
+}
+
+body {
+    background-color: var(--backgroundColor);
+    color: var(--color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    width: 40%;
+    text-align: justify;
+}
+
+caption {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    appearance: none;
+    background-color: transparent;
+    color: var(--color);
+    font-size: 20px;
+    height: 20px;
+    text-align: right;
+    width: 80px;    
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+table {
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+}
+
+th {
+    background-color: var(--thBackgroundColor);
+    color: var(--color);
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--trOddBackgroundColor);
+    color: var(--color);
+}
+
+tr:nth-child(odd) input[type=text]:focus {
+    background-color: var(--trEvenBackgroundColor);
+}
+
+tr:nth-child(even) {
+    background-color: var(--trEvenBackgroundColor);
+    color: var(--color);
+}
+
+tr:nth-child(even) input[type=text]:focus {
+    background-color: var(--trOddBackgroundColor);
+}
+
+td:first-child {
+    font-weight: bold;
+    text-align: right;
+}
+
+.properties {
+    width: 25%;
+}
+
+.inputs {
+    width: 20%;
+}
+
+.outputs {
+    width: 20%;
+}
+
+.differences {
+    width: 20%;
+}
+
+.units {
+    width: 5%;
+}
+
+#lightmodedarkmodeicon {
+    cursor: pointer;
+    width: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr.rounded {
+    border-top: 5px;
+    border-style: solid;
+    border-color: var(--color);
+    border-radius: 5px;
+    width: 40%;
+}
+
+
+.slidecontainer {
+    width: 40%;
+}
+  
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 20px;
+    background: var(--trEvenBackgroundColor);
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--color);
+    cursor: pointer;
+}
+  
+
+
+
