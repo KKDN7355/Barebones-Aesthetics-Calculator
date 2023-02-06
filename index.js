@@ -1,4 +1,4 @@
-let icon = document.getElementById('lightmodedarkmodeicon');
+let lightmodedarkmodeicon = document.getElementById('lightmodedarkmodeicon');
 
 let heightInput = document.getElementById('heightInput');
 let wristInput = document.getElementById('wristInput');
@@ -7,25 +7,22 @@ let kneeInput = document.getElementById('kneeInput');
 let shouldersInput = document.getElementById('shouldersInput');
 let chestInput = document.getElementById('chestInput');
 let waistInput = document.getElementById('waistInput');
-let leftThighInput = document.getElementById('leftThighInput');
-let rightThighInput = document.getElementById('rightThighInput');
-let leftCalfInput = document.getElementById('leftCalfInput');
-let rightCalfInput = document.getElementById('rightCalfInput');
-let leftBicepInput = document.getElementById('leftBicepInput');
-let rightBicepInput = document.getElementById('rightBicepInput');
-let leftForearmInput = document.getElementById('leftForearmInput');
-let rightForearmInput = document.getElementById('rightForearmInput');
+
+let legsInput = document.getElementById('legsInput');
+let calvesInput = document.getElementById('calvesInput');
+let armsInput = document.getElementById('armsInput');
+let forearmsInput = document.getElementById('forearmsInput');
 
 var waistSlider = document.getElementById("waistSlider");
 
 // toggle for light and dark modes
-icon.onclick = () => {
+lightmodedarkmodeicon.onclick = () => {
     document.body.classList.toggle("dark-theme");
 
     if(document.body.classList.contains("dark-theme")) {
-        icon.src="images/sun.png";
+        lightmodedarkmodeicon.src="images/sun.png";
     } else {
-        icon.src="images/moon.png";
+        lightmodedarkmodeicon.src="images/moon.png";
     }
 }
 
@@ -68,36 +65,27 @@ function onBlurPartTwo () {
         chestOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notChestOutput);
 
         // calves should be wrist multiplied by 2.5
-        let calfOutput = wristInput.value * 2.5;
-            calfOutput = parseFloat(calfOutput).toFixed(2);
+        let notCalvesOutput = wristInput.value * 2.5;
+            notCalvesOutput = parseFloat(notCalvesOutput).toFixed(2);
 
-        leftCalfOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calfOutput);
-        rightCalfOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calfOutput);
-
-        // biceps should be wrist multiplied by 2.5
-        leftBicepOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calfOutput);
-        rightBicepOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calfOutput);
+        calvesOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notCalvesOutput);
+        
+        // arms should be wrist multiplied by 2.5
+        armsOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notCalvesOutput);
+        
 
         // forearms should be wrist multiplied by golden ratio
-        let notLeftForearmOutput = leftBicepOutput.value - wristInput.value/2;
-            notLeftForearmOutput = parseFloat(notLeftForearmOutput).toFixed(2);
-        leftForearmOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftForearmOutput);
-
-        let notRightForearmOutput = rightBicepOutput.value - wristInput.value/2;
-            notRightForearmOutput = parseFloat(notRightForearmOutput).toFixed(2);
-        rightForearmOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightForearmOutput);
+        let notForearmsOutput = armsOutput.value - wristInput.value/2;
+            notForearmsOutput = parseFloat(notForearmsOutput).toFixed(2);
+        forearmsOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notForearmsOutput);
     }
 
     if (kneeInput.value != "")
     {
-        // thighs should be knees multiplied by 1.75
-        let notLeftThighOutput = kneeInput.value * 1.75;
-            notLeftThighOutput = parseFloat(notLeftThighOutput).toFixed(2);
-        leftThighOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftThighOutput);
-
-        let notRightThighOutput = kneeInput.value * 1.75;
-            notRightThighOutput = parseFloat(notRightThighOutput).toFixed(2);
-        rightThighOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightThighOutput);
+        // legs should be knees multiplied by 1.75
+        let notLegsOutput = kneeInput.value * 1.75;
+            notLegsOutput = parseFloat(notLegsOutput).toFixed(2);
+        legsOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLegsOutput);
     }
 
     if (shouldersInput.value != "")
@@ -121,60 +109,32 @@ function onBlurPartTwo () {
         waistDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notWaistDifference);
     }
 
-    if (leftThighInput.value != "")
+    if (legsInput.value != "")
     {
-        let notLeftThighDifference = leftThighOutput.value - leftThighInput.value;
-            notLeftThighDifference = parseFloat(notLeftThighDifference).toFixed(2);
-        leftThighDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftThighDifference);
+        let notLegsDifference = legsOutput.value - legsInput.value;
+            notLegsDifference = parseFloat(notLegsDifference).toFixed(2);
+        legsDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLegsDifference);
     }
 
-    if (rightThighInput.value != "")
+    if (calvesInput.value != "")
     {
-        let notRightThighDifference = rightThighOutput.value - rightThighInput.value;
-            notRightThighDifference = parseFloat(notRightThighDifference).toFixed(2);
-        rightThighDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightThighDifference);
+        let notCalvesDifference = calvesOutput.value - calvesInput.value;
+            notCalvesDifference = parseFloat(notCalvesDifference).toFixed(2);
+        calvesDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notCalvesDifference);
     }
 
-    if (leftCalfInput.value != "")
+    if (armsInput.value != "")
     {
-        let notLeftCalfDifference = leftCalfOutput.value - leftCalfInput.value;
-            notLeftCalfDifference = parseFloat(notLeftCalfDifference).toFixed(2);
-        leftCalfDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftCalfDifference);
+        let notArmsDifference = armsOutput.value - armsInput.value;
+            notArmsDifference = parseFloat(notArmsDifference).toFixed(2);
+        armsDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notArmsDifference);
     }
 
-    if (rightCalfInput.value != "")
+    if (forearmsInput.value != "")
     {
-        let notRightCalfDifference = rightCalfOutput.value - rightCalfInput.value;
-            notRightCalfDifference = parseFloat(notRightCalfDifference).toFixed(2);
-        rightCalfDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightCalfDifference);
-    }
-
-    if (leftBicepInput.value != "")
-    {
-        let notLeftBicepDifference = leftBicepOutput.value - leftBicepInput.value;
-            notLeftBicepDifference = parseFloat(notLeftBicepDifference).toFixed(2);
-        leftBicepDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftBicepDifference);
-    }
-
-    if (rightBicepInput.value != "")
-    {
-        let notRightBicepDifference = rightBicepOutput.value - rightBicepInput.value;
-            notRightBicepDifference = parseFloat(notRightBicepDifference).toFixed(2);
-        rightBicepDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightBicepDifference);
-    }
-
-    if (leftForearmInput.value != "")
-    {
-        let notLeftForearmDifference = leftForearmOutput.value - leftForearmInput.value;
-            notLeftForearmDifference = parseFloat(notLeftForearmDifference).toFixed(2);
-        leftForearmDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftForearmDifference);
-    }
-
-    if (rightForearmInput.value != "")
-    {
-        let notRightForearmDifference = rightForearmOutput.value - rightForearmInput.value;
-            notRightForearmDifference = parseFloat(notRightForearmDifference).toFixed(2);
-        rightForearmDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightForearmDifference);
+        let notForearmsDifference = forearmsOutput.value - forearmsInput.value;
+            notForearmsDifference = parseFloat(notForearmsDifference).toFixed(2);
+        forearmsDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notForearmsDifference);
     }
 };
 
@@ -203,35 +163,25 @@ wristInput.oninput = () => {
     chestOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notChestOutput);
 
     // calves should be wrist multiplied by 2.5
-    let calfOutput = wristInput.value * 2.5;
-        calfOutput = parseFloat(calfOutput).toFixed(2);
+    let notCalvesOutput = wristInput.value * 2.5;
+        notCalvesOutput = parseFloat(notCalvesOutput).toFixed(2);
 
-    leftCalfOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calfOutput);
-    rightCalfOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calfOutput);
-
-    // biceps should be wrist multiplied by 2.5
-    leftBicepOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calfOutput);
-    rightBicepOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calfOutput);
-
+    calvesOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notCalvesOutput);
+    
+    // arms should be wrist multiplied by 2.5
+    armsOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notCalvesOutput);
+    
     // forearms should be wrist multiplied by golden ratio
-    let notLeftForearmOutput = leftBicepOutput.value - wristInput.value/2;
-        notLeftForearmOutput = parseFloat(notLeftForearmOutput).toFixed(2);
-    leftForearmOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftForearmOutput);
-
-    let notRightForearmOutput = rightBicepOutput.value - wristInput.value/2;
-        notRightForearmOutput = parseFloat(notRightForearmOutput).toFixed(2);
-    rightForearmOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightForearmOutput);
+    let notForearmsOutput = armsOutput.value - wristInput.value/2;
+        notForearmsOutput = parseFloat(notForearmsOutput).toFixed(2);
+    forearmsOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notForearmsOutput);
 }
 
 kneeInput.oninput = () => {
-    // thighs should be knees multiplied by 1.75
-    let notLeftThighOutput = kneeInput.value * 1.75;
-        notLeftThighOutput = parseFloat(notLeftThighOutput).toFixed(2);
-    leftThighOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftThighOutput);
-
-    let notRightThighOutput = kneeInput.value * 1.75;
-        notRightThighOutput = parseFloat(notRightThighOutput).toFixed(2);
-    rightThighOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightThighOutput);
+    // legs should be knees multiplied by 1.75
+    let notLegsOutput = kneeInput.value * 1.75;
+        notLegsOutput = parseFloat(notLegsOutput).toFixed(2);
+    legsOutput.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLegsOutput);
 }
 
 shouldersInput.oninput = () => {
@@ -252,52 +202,28 @@ waistInput.oninput = () => {
     waistDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notWaistDifference);
 }
 
-leftThighInput.oninput = () => {
-    let notLeftThighDifference = leftThighOutput.value - leftThighInput.value;
-        notLeftThighDifference = parseFloat(notLeftThighDifference).toFixed(2);
-    leftThighDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftThighDifference);
+legsInput.oninput = () => {
+    let notLegsDifference = legsOutput.value - legsInput.value;
+        notLegsDifference = parseFloat(notLegsDifference).toFixed(2);
+    legsDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLegsDifference);
 }
 
-rightThighInput.oninput = () => {
-    let notRightThighDifference = rightThighOutput.value - rightThighInput.value;
-        notRightThighDifference = parseFloat(notRightThighDifference).toFixed(2);
-    rightThighDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightThighDifference);
+calvesInput.oninput = () => {
+    let notCalvesDifference = calvesOutput.value - calvesInput.value;
+        notCalvesDifference = parseFloat(notCalvesDifference).toFixed(2);
+    calvesDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notCalvesDifference);
 }
 
-leftCalfInput.oninput = () => {
-    let notLeftCalfDifference = leftCalfOutput.value - leftCalfInput.value;
-        notLeftCalfDifference = parseFloat(notLeftCalfDifference).toFixed(2);
-    leftCalfDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftCalfDifference);
+armsInput.oninput = () => {
+    let notArmsDifference = armsOutput.value - armsInput.value;
+        notArmsDifference = parseFloat(notArmsDifference).toFixed(2);
+    armsDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notArmsDifference);
 }
 
-rightCalfInput.oninput = () => {
-    let notRightCalfDifference = rightCalfOutput.value - rightCalfInput.value;
-        notRightCalfDifference = parseFloat(notRightCalfDifference).toFixed(2);
-    rightCalfDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightCalfDifference);
-}
-
-leftBicepInput.oninput = () => {
-    let notLeftBicepDifference = leftBicepOutput.value - leftBicepInput.value;
-        notLeftBicepDifference = parseFloat(notLeftBicepDifference).toFixed(2);
-    leftBicepDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftBicepDifference);
-}
-
-rightBicepInput.oninput = () => {
-    let notRightBicepDifference = rightBicepOutput.value - rightBicepInput.value;
-        notRightBicepDifference = parseFloat(notRightBicepDifference).toFixed(2);
-    rightBicepDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightBicepDifference);
-}
-
-leftForearmInput.oninput = () => {
-    let notLeftForearmDifference = leftForearmOutput.value - leftForearmInput.value;
-        notLeftForearmDifference = parseFloat(notLeftForearmDifference).toFixed(2);
-    leftForearmDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notLeftForearmDifference);
-}
-
-rightForearmInput.oninput = () => {
-    let notRightForearmDifference = rightForearmOutput.value - rightForearmInput.value;
-        notRightForearmDifference = parseFloat(notRightForearmDifference).toFixed(2);
-    rightForearmDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notRightForearmDifference);
+forearmsInput.oninput = () => {
+    let notForearmsDifference = forearmsOutput.value - forearmsInput.value;
+        notForearmsDifference = parseFloat(notForearmsDifference).toFixed(2);
+    forearmsDifference.value = Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(notForearmsDifference);
 }
 
 slider.oninput = () => {

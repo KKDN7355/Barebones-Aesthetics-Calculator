@@ -3,15 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Aesthetics Calculator">
+    <meta name="description" content="Barebones Aesthetics Calculator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Aesthetics Calculator</title>
+    <title>Barebones Aesthetics Calculator</title>
 </head>
 
 <body>
     <br><img src="images/moon.png" id="lightmodedarkmodeicon">
-    <br><h1>ϕ Aesthetics Calculator ϕ</h1>
+    <br><h1>ϕ Barebones Aesthetics Calculator ϕ</h1>
     <br><p>This is just a guideline for proportionality and what may be deemed as aesthetic according to my personal research and is obviously not an indicator of health and overall fitness.</p><br>
 
     <table>
@@ -34,24 +34,24 @@
 
         <tbody>
             <tr>
-                <td>Height:</td>
+                <td>HEIGHT:</td>
                 <td><input type="text" class="userInput" id="heightInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)" autofocus></td>
                 <td>cm</td>
             </tr>
             <tr>
-                <td>Wrist:</td>
+                <td>WRIST:</td>
                 <td><input type="text" class="userInput" id="wristInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
                 <td>cm</td>
             </tr>
             <tr>
-                <td>Knee:</td>
+                <td>KNEE:</td>
                 <td><input type="text" class="userInput" id="kneeInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
                 <td>cm</td>
             </tr>
         </tbody>
 
         <caption style="caption-side:bottom">
-            (Measurements to be taken flexed but not pumped.)
+            (Measurements to be taken flexed but not pumped. :P)
         </caption>
     </table>
 
@@ -83,7 +83,7 @@
 
         <tbody>
             <tr>
-                <td>Shoulders:</td>
+                <td>SHOULDERS:</td>
                 <td><input type="text" class="userInput" id="shouldersInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
                 <td>cm</td>
                 <td><input type="number" id="shouldersOutput" readonly disabled></td>
@@ -92,7 +92,7 @@
                 <td>cm</td>
             </tr>
             <tr>
-                <td>Chest:</td>
+                <td>CHEST:</td>
                 <td><input type="text" class="userInput" id="chestInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
                 <td>cm</td>
                 <td><input type="number" id="chestOutput" readonly disabled></td>
@@ -101,7 +101,7 @@
                 <td>cm</td>
             </tr>
             <tr>
-                <td>Waist:</td>
+                <td>WAIST:</td>
                 <td><input type="text" class="userInput" id="waistInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
                 <td>cm</td>
                 <td><input type="number" id="waistOutput" readonly disabled></td>
@@ -110,75 +110,39 @@
                 <td>cm</td>
             </tr>
             <tr>
-                <td>Left Thigh:</td>
-                <td><input type="text" class="userInput" id="leftThighInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>LEGS:</td>
+                <td><input type="text" class="userInput" id="legsInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
                 <td>cm</td>
-                <td><input type="number" id="leftThighOutput" readonly disabled></td>
+                <td><input type="number" id="legsOutput" readonly disabled></td>
                 <td>cm</td>
-                <td><input type="number" id="leftThighDifference" readonly disabled></td>
-                <td>cm</td>
-            </tr>
-            <tr>
-                <td>Right Thigh:</td>
-                <td><input type="text" class="userInput" id="rightThighInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
-                <td>cm</td>
-                <td><input type="number" id="rightThighOutput" readonly disabled></td>
-                <td>cm</td>
-                <td><input type="number" id="rightThighDifference" readonly disabled></td>
+                <td><input type="number" id="legsDifference" readonly disabled></td>
                 <td>cm</td>
             </tr>
             <tr>
-                <td>Left Calf:</td>
-                <td><input type="text" class="userInput" id="leftCalfInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>CALVES:</td>
+                <td><input type="text" class="userInput" id="calvesInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
                 <td>cm</td>
-                <td><input type="number" id="leftCalfOutput" readonly disabled></td>
+                <td><input type="number" id="calvesOutput" readonly disabled></td>
                 <td>cm</td>
-                <td><input type="number" id="leftCalfDifference" readonly disabled></td>
-                <td>cm</td>
-            </tr>
-            <tr>
-                <td>Right Calf:</td>
-                <td><input type="text" class="userInput" id="rightCalfInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
-                <td>cm</td>
-                <td><input type="number" id="rightCalfOutput" readonly disabled></td>
-                <td>cm</td>
-                <td><input type="number" id="rightCalfDifference" readonly disabled></td>
+                <td><input type="number" id="calvesDifference" readonly disabled></td>
                 <td>cm</td>
             </tr>
             <tr>
-                <td>Left Bicep:</td>
-                <td><input type="text" class="userInput" id="leftBicepInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>ARMS:</td>
+                <td><input type="text" class="userInput" id="armsInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
                 <td>cm</td>
-                <td><input type="number" id="leftBicepOutput" readonly disabled></td>
+                <td><input type="number" id="armsOutput" readonly disabled></td>
                 <td>cm</td>
-                <td><input type="number" id="leftBicepDifference" readonly disabled></td>
-                <td>cm</td>
-            </tr>
-            <tr>
-                <td>Right Bicep:</td>
-                <td><input type="text" class="userInput" id="rightBicepInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
-                <td>cm</td>
-                <td><input type="number" id="rightBicepOutput" readonly disabled></td>
-                <td>cm</td>
-                <td><input type="number" id="rightBicepDifference" readonly disabled></td>
+                <td><input type="number" id="armsDifference" readonly disabled></td>
                 <td>cm</td>
             </tr>
             <tr>
-                <td>Left Forearm:</td>
-                <td><input type="text" class="userInput" id="leftForearmInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
+                <td>FOREARMS:</td>
+                <td><input type="text" class="userInput" id="forearmsInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
                 <td>cm</td>
-                <td><input type="number" id="leftForearmOutput" readonly disabled></td>
+                <td><input type="number" id="forearmsOutput" readonly disabled></td>
                 <td>cm</td>
-                <td><input type="number" id="leftForearmDifference" readonly disabled></td>
-                <td>cm</td>
-            </tr>
-            <tr>
-                <td>Right Forearm:</td>
-                <td><input type="text" class="userInput" id="rightForearmInput" steps="0" onfocus="clearInput(this)" onblur="onBlur(this)"></td>
-                <td>cm</td>
-                <td><input type="number" id="rightForearmOutput" readonly disabled></td>
-                <td>cm</td>
-                <td><input type="number" id="rightForearmDifference" readonly disabled></td>
+                <td><input type="number" id="forearmsDifference" readonly disabled></td>
                 <td>cm</td>
             </tr>
         </tbody>
