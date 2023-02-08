@@ -21,17 +21,32 @@
 }
 
 * {
+    font-family: 'Federo';
     margin: 0 auto;
 }
 
 body {
     background-color: var(--backgroundColor);
     color: var(--color);
-    font-family: 'Federo';
+    font-size: 12px;
+    padding: 15px;
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 16px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 12px;
 }
 
 p {
-    width: 40%;
     text-align: justify;
 }
 
@@ -39,18 +54,13 @@ caption {
     text-align: center;
 }
 
-h1 {
-    text-align: center;
-}
-
 input {
     appearance: none;
     background-color: transparent;
     color: var(--color);
-    font-size: 20px;
-    height: 20px;
+    font-size: 12px;
     text-align: right;
-    width: 80px;    
+    width: 40px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -64,9 +74,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 table {
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
-    width: 40%;
 }
 
 th {
@@ -139,9 +149,9 @@ hr.rounded {
 }
 
 .slidecontainer {
-    width: 40%;
+    width: 80%;
 }
-  
+
 .slider {
     -webkit-appearance: none;
     appearance: none;
@@ -162,8 +172,104 @@ hr.rounded {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     background: var(--color);
     cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+    
+    h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    h3 {
+        font-size: 16px;
+    }
+    
+    p {
+        width: 80%;
+    }
+
+    input {
+        font-size: 16px;
+        width: 60px;
+    }
+    
+    table {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .slidecontainer {
+        width: 60%;
+    }
+
+    .slider {
+        height: 30px;
+    }
+    
+    .slider::-webkit-slider-thumb {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    body {
+        font-size: 20px;
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 44px;
+        text-align: center;
+    }
+    
+    h2 {
+        font-size: 32px;
+        text-align: center;
+    }
+    
+    h3 {
+        font-size: 24px;
+    }
+    
+    p {
+        width: 60%;
+    }
+
+    input {
+        font-size: 20px;
+        width: 80px;
+    }
+    
+    table {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .slidecontainer {
+        width: 40%;
+    }
+
+    .slider {
+        height: 40px;
+    }
+    
+    .slider::-webkit-slider-thumb {
+        width: 40px;
+        height: 40px;
+    }
 }
