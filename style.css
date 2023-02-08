@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Federo&display=swap');
 
-/* Light Mode */
-:root {
-    --backgroundColor:          #ffffff;
-    --color:                    #000000;
-
-    --thBackgroundColor:        #9394a5;
-    --trOddBackgroundColor:     #d2d3db;
-    --trEvenBackgroundColor:    #e4e5f1;
-}
-
 /* Dark Mode */
-.dark-theme {
+:root {
     --backgroundColor:          #000000;
     --color:                    #BB86FC;
 
     --thBackgroundColor:        #000000;
     --trOddBackgroundColor:     #242526;
     --trEvenBackgroundColor:    #3a3b3c;
+}
+
+/* Light Mode */
+.light-theme {
+    --backgroundColor:          #ffffff;
+    --color:                    #000000;
+
+    --thBackgroundColor:        #9394a5;
+    --trOddBackgroundColor:     #d2d3db;
+    --trEvenBackgroundColor:    #e4e5f1;
 }
 
 * {

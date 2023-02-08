@@ -17,12 +17,12 @@ var waistSlider = document.getElementById("waistSlider");
 
 // toggle for light and dark modes
 lightmodedarkmodeicon.onclick = () => {
-    document.body.classList.toggle("dark-theme");
+    document.body.classList.toggle("light-theme");
 
-    if(document.body.classList.contains("dark-theme")) {
-        lightmodedarkmodeicon.src="images/sun.png";
-    } else {
+    if(document.body.classList.contains("light-theme")) {
         lightmodedarkmodeicon.src="images/moon.png";
+    } else {
+        lightmodedarkmodeicon.src="images/sun.png";
     }
 }
 
