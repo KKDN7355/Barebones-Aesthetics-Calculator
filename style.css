@@ -76,6 +76,7 @@ input[type=number]::-webkit-outer-spin-button {
 table {
     padding-left: 10px;
     padding-right: 10px;
+    width: 100%;
     text-align: center;
 }
 
@@ -210,6 +211,7 @@ hr.rounded {
     table {
         padding-left: 20px;
         padding-right: 20px;
+        width: 80%;
     }
 
     .slidecontainer {
@@ -258,6 +260,7 @@ hr.rounded {
     table {
         padding-left: 25px;
         padding-right: 25px;
+        width: 60%;
     }
 
     .slidecontainer {
